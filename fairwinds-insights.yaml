@@ -9,15 +9,3 @@ options:
 images:
   docker:
   - nginx:1.18-alpine
-  - quay.io/acme-co/my-app:$CI_HASH
-
-# These manifests will be scanned for configuration issues.
-manifests:
-  yaml:
-  - ./deploy/manifests/
-  - ./main.deployment.yaml
-  helm:
-  - name: prod
-    path: ./deploy/chart
-    values:
-      foo: bar
