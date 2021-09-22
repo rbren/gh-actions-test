@@ -36,3 +36,7 @@ jobs:
           echo test, and deploy your project.
           git status
           git merge-base HEAD main
+          curl -L https://staging.insights.fairwinds.com/v0/insights-ci-0.4.4.sh > insights-ci.sh
+          echo "201275f09d7075db39c39014676fc1420f6e8887463a43c614ba939e57b1142c *insights-ci.sh" | shasum -a 256 --check
+          chmod +x insights-ci.sh
+          ./insights-ci.sh
